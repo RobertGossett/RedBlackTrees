@@ -550,6 +550,8 @@ template <typename T>
 TreeNode<T>* Tree<T>::Find_Delete_Position(TreeNode<T>* cur, const T& x) const{
     if(cur == NULL) // shouldn't happen
         return NULL;
+    if(cur->get_item() == x)
+        return cur;
     if(cur->get_item() >= x){ // look left
         if(cur->get_left()->get_item() == x) // then the left child is where the new
             //  should be
